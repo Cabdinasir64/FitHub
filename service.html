@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .mobile-menu-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        .mobile-menu-exit {
+            animation: slideOut 0.3s ease-out forwards;
+        }
+
+        .active_link {
+            color: #a3e635;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-200 ease">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 w-full shadow-lg fixed top-0 left-0 z-50 transition-colors duration-300">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between md:px-8 md:py-4 lg:px-20">
+            <div class="flex items-center">
+                <a href="#" class="font-bold text-2xl lg:text-3xl">
+                    <span class="text-lime-400">Fit<span class="dark:text-white text-gray-800">Hub</span></span>
+                </a>
+            </div>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class=" link ">Home</a>
+                </li>
+                <li><a href="service.html" class="link">Services</a>
+                </li>
+                <li><a href="membership.html" class="link">Membership</a>
+                </li>
+                <li><a href="contact.html" class="link">Contact</a>
+                </li>
+                <li>
+                    <button id="themeToggle" class="themeToggle">
+                        <i class="fa fa-moon dark:fa-sun text-xl"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="md:hidden flex items-center justify-center space-x-2 ">
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="inline-flex items-center justify-center">
+                    <i class="fa fa-bars text-xl dark:text-white"></i>
+                </button>
+                <div class="themeToggle">
+                    <i class="fa fa-moon dark:fa-sun text-xl inline-flex items-center justify-center"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white dark:bg-gray-800 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="closeMenu" class="text-2xl">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col items-center space-y-6 pt-10">
+            <li><a href="index.html" class="text-xl link">Home</a>
+            </li>
+            <li><a href="service.html" class="text-xl link">Services</a>
+            </li>
+            <li><a href="membership.html" class="text-xl link">Membership</a>
+            </li>
+            <li><a href="contact.html" class="text-xl link">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Service Hero Section -->
+    <section
+        class="min-h-[60vh] flex items-center pt-20 md:pt-4 lg:pt-0 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20 relative">
+            <!-- Hero Content -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <span class="text-lime-400 font-semibold text-lg">Our Services</span>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                            Transform Your Fitness Journey With Our
+                            <span class="text-lime-400 block mt-2">Premium Services</span>
+                        </h1>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg max-w-xl">
+                            Discover our comprehensive range of fitness services designed to help you achieve your
+                            health and wellness goals.
+                        </p>
+                    </div>
+                    <!-- Feature List -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="font-medium">Personal Training</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="font-medium">Group Classes</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heart text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="font-medium">Nutrition Plans</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-clock text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="font-medium">24/7 Support</span>
+                        </div>
+                    </div>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="flex-1 bg-lime-400 hover:bg-lime-500 text-white font-semibold py-4 px-8 rounded-xl transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl;
+                    ">
+                            Explore Services
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button
+                            class="flex-1 border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300;">
+                            Free Consultation
+                        </button>
+                    </div>
+                </div>
+                <!-- Right Content - Image -->
+                <div class="relative">
+                    <div class="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden group">
+                        <img src="src/assets/Fitness Training.png" alt="Fitness Training"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    Our <span class="text-lime-400">Services</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Transform your fitness journey with our comprehensive range of services designed to meet your unique
+                    needs and goals.
+                </p>
+            </div>
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Service Card 1 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img1.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $49/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Personal Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Customized workout plans</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>One-on-one guidance</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Progress tracking</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img2.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $39/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Group Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span> Customized group workout</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Instructor-led sessions</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Motivation and progress</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img1.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $59/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Strength Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Strength-building exercises</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Guided training sessionse</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Progress monitoring</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom CTA -->
+            <div class="mt-16 text-center">
+                <button class="button_service">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Team/Trainers Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-lime-400 font-semibold text-lg">Our Expert Team</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    Meet Our Professional <span class="text-lime-400">Trainers</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Our certified trainers are here to help you achieve your fitness goals with personalized guidance
+                    and expertise.
+                </p>
+            </div>
+            <!-- Trainers Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trainer Card 1 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative h-[300px] overflow-hidden">
+                        <img src="src/assets/img8.webp" alt="John Doe"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white text-center">John Doe</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Personal Trainer</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Weight
+                                Training</span>
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Cardio</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">5+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Exp.</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">100+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">4.9</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trainer Card 2 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative h-[300px] overflow-hidden">
+                        <img src="src/assets/img9.avif" alt="John Doe"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white text-center">William Smith</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Personal Trainer</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Weight
+                                Training</span>
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Yoga</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">3+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Exp.</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">34+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">3.9</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trainer Card 3 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative h-[300px] overflow-hidden">
+                        <img src="src/assets/img10.avif" alt="John Doe"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-lime-400 transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white text-center">John Doe</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Personal Trainer</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Weight
+                                Training</span>
+                            <span class="px-4 py-1 text-sm bg-lime-400/10 text-lime-400 rounded-full">Nutrition</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">9+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Exp.</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">340+</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-lime-400">5</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom CTA -->
+            <div class="mt-16 text-center">
+                <button
+                    class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-lime-400 rounded-xl hover:bg-lime-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl space-x-2">
+                    <span>View All Trainers</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <span class="text-lime-400 font-semibold text-lg">Class Schedule</span>
+                    <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                        Find Your Perfect <span class="text-lime-400">Training Time</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Choose from our wide range of classes throughout the week. Our flexible schedule is designed to
+                        fit your lifestyle.
+                    </p>
+                    <!-- Schedule Grid -->
+                    <div class="grid gap-4 mt-8">
+                        <!-- Schedule Item 1 -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-lime-400/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-dumbbell text-lime-400 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 dark:text-white">Strength Training</h3>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">with John Doe</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block font-semibold text-lime-400">09:00 AM</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">60 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Schedule Item 2 -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-lime-400/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-running text-lime-400 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 dark:text-white">HIIT Class</h3>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">with Sarah Smith</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block font-semibold text-lime-400">10:30 AM</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">45 min</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Schedule Item 3 -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-lime-400/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-heart text-lime-400 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 dark:text-white">Cardio Blast</h3>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">with Mike Johnson</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block font-semibold text-lime-400">02:00 PM</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">50 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-lime-400 rounded-xl hover:bg-lime-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <span>View Full Schedule</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <!-- Right Content - Calendar -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                    <div class="space-y-6">
+                        <!-- Calendar Header -->
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">December 2024</h3>
+                            <div class="flex space-x-2">
+                                <button
+                                    class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-300">
+                                    <i class="fas fa-chevron-left text-gray-600 dark:text-gray-300"></i>
+                                </button>
+                                <button
+                                    class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-300">
+                                    <i class="fas fa-chevron-right text-gray-600 dark:text-gray-300"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Calendar Days -->
+                        <div class="grid grid-cols-7 gap-2 text-center font-medium text-gray-600 dark:text-gray-300">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+                        <!-- Calendar Grid -->
+                        <div class="grid grid-cols-1 gap-3">
+                            <!-- Previous Month Days -->
+                            <button
+                                class="p-2 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-300">30</button>
+                            <button
+                                class="p-2 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-300">31</button>
+                            <button
+                                class="p-2 hover:bg-lime-400 hover:text-white rounded-lg transition-colors duration-300">1</button>
+                            <button class="p-2 bg-lime-400 text-white rounded-lg mt-2">2</button>
+                            <button
+                                class="p-2 border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-white rounded-lg transition-colors duration-300 mt-2">3</button>
+                        </div>
+                        <!-- Legend -->
+                        <div class="flex items-center justify-center space-x-4 text-sm">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-lime-400 rounded-full"></div>
+                                <span class="text-gray-600 dark:text-gray-300">Today</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 border-2 border-lime-400 rounded-full"></div>
+                                <span class="text-gray-600 dark:text-gray-300">Event</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <a href="#" class="inline-block">
+                        <span class="text-3xl font-bold">
+                            <span class="text-lime-400">Fit</span>Hub
+                        </span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">
+                        Transform your life with our comprehensive fitness solutions and expert guidance.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Our Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Class Schedule
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Pricing Plans
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-lime-400"></i>
+                            <span class="text-gray-400">123 Fitness Street, NY 10001, USA</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-lime-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-lime-400"></i>
+                            <span class="text-gray-400">info@fithub.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-lime-400"></i>
+                            <span class="text-gray-400">Mon - Sun: 6:00 AM - 10:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Newsletter</h3>
+                    <p class="text-gray-400">
+                        Subscribe to our newsletter for the latest updates and exclusive offers.
+                    </p>
+                    <form class="space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full bg-gray-800 rounded-lg py-3 px-4 text-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-400">
+                        </div>
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-lg 
+                                 transition-all duration-300 transform hover:-translate-y-1">
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-center md:text-left">
+                        © 2024 FitHub. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Privacy Policy
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Terms of Service
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Cookie Policy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="src/js/main.js"> </script>
+</body>
+
+</html>

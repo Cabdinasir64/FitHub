@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitHub</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .mobile-menu-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        .mobile-menu-exit {
+            animation: slideOut 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-200 ease">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 w-full shadow-lg fixed top-0 left-0 z-50 transition-colors duration-300">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between md:px-8 md:py-4 lg:px-20">
+            <div class="flex items-center">
+                <a href="#" class="font-bold text-2xl lg:text-3xl">
+                    <span class="text-lime-400">Fit<span class="dark:text-white text-gray-800">Hub</span></span>
+                </a>
+            </div>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class=" link">Home</a>
+                </li>
+                <li><a href="service.html" class="link">Services</a>
+                </li>
+                <li><a href="membership.html" class="link">Membership</a>
+                </li>
+                <li><a href="contact.html" class="link">Contact</a>
+                </li>
+                <li>
+                    <button id="themeToggle" class="themeToggle">
+                        <i class="fa fa-moon dark:fa-sun text-xl"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="md:hidden flex items-center justify-center space-x-2 ">
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="inline-flex items-center justify-center">
+                    <i class="fa fa-bars text-xl dark:text-white"></i>
+                </button>
+                <div class="themeToggle">
+                    <i class="fa fa-moon dark:fa-sun text-xl inline-flex items-center justify-center"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white dark:bg-gray-800 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="closeMenu" class="text-2xl">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col items-center space-y-6 pt-10">
+            <li><a href="index.html" class="text-xl link">Home</a>
+            </li>
+            <li><a href="service.html" class="text-xl link">Services</a>
+            </li>
+            <li><a href="membership.html" class="text-xl link">Membership</a>
+            </li>
+            <li><a href="contact.html" class="text-xl link">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Contact Section -->
+    <section class="flex items-center justify-center py-16 mt-16 bg-gray-50 dark:bg-gray-700 min-h-screen">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20 py-32">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                </p>
+            </div>
+            <!-- Contact Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 w-full">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">First Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border-transparent focus:border-lime-400 focus:ring-2 focus:ring-lime-400">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Last Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border-transparent focus:border-lime-400 focus:ring-2 focus:ring-lime-400">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border-transparent focus:border-lime-400 focus:ring-2 focus:ring-lime-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border-transparent focus:border-lime-400 focus:ring-2 focus:ring-lime-400"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <!-- Contact Information -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 md:p-8">
+                    <div class="space-y-8">
+                        <!-- Contact Items -->
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Our Location</h3>
+                                <p class="text-gray-600 dark:text-gray-400">123 Fitness Street, NY 10001, USA</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Phone Number</h3>
+                                <p class="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Email Address</h3>
+                                <p class="text-gray-600 dark:text-gray-400">info@fithub.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Working Hours</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Mon - Sun: 6:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <a href="#" class="inline-block">
+                        <span class="text-3xl font-bold">
+                            <span class="text-lime-400">Fit</span>Hub
+                        </span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">
+                        Transform your life with our comprehensive fitness solutions and expert guidance.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Our Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Class Schedule
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Pricing Plans
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-lime-400"></i>
+                            <span class="text-gray-400">123 Fitness Street, NY 10001, USA</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-lime-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-lime-400"></i>
+                            <span class="text-gray-400">info@fithub.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-lime-400"></i>
+                            <span class="text-gray-400">Mon - Sun: 6:00 AM - 10:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Newsletter</h3>
+                    <p class="text-gray-400">
+                        Subscribe to our newsletter for the latest updates and exclusive offers.
+                    </p>
+                    <form class="space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full bg-gray-800 rounded-lg py-3 px-4 text-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-400">
+                        </div>
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-lg 
+                             transition-all duration-300 transform hover:-translate-y-1">
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-center md:text-left">
+                        © 2024 FitHub. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Privacy Policy
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Terms of Service
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Cookie Policy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="src/js/main.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitHub</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .mobile-menu-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        .mobile-menu-exit {
+            animation: slideOut 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-200 ease">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 w-full shadow-lg fixed top-0 left-0 z-50 transition-colors duration-300">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between md:px-8 md:py-4 lg:px-20">
+            <div class="flex items-center">
+                <a href="#" class="font-bold text-2xl lg:text-3xl">
+                    <span class="text-lime-400">Fit<span class="dark:text-white text-gray-800">Hub</span></span>
+                </a>
+            </div>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class=" link">Home</a>
+                </li>
+                <li><a href="service.html" class="link">Services</a>
+                </li>
+                <li><a href="membership.html" class="link">Membership</a>
+                </li>
+                <li><a href="contact.html" class="link">Contact</a>
+                </li>
+                <li>
+                    <button id="themeToggle" class="themeToggle">
+                        <i class="fa fa-moon dark:fa-sun text-xl"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="md:hidden flex items-center justify-center space-x-2 ">
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="inline-flex items-center justify-center">
+                    <i class="fa fa-bars text-xl dark:text-white"></i>
+                </button>
+                <div class="themeToggle">
+                    <i class="fa fa-moon dark:fa-sun text-xl inline-flex items-center justify-center"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white dark:bg-gray-800 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="closeMenu" class="text-2xl">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col items-center space-y-6 pt-10">
+            <li><a href="index.html" class="text-xl link">Home</a>
+            </li>
+            <li><a href="service.html" class="text-xl link">Services</a>
+            </li>
+            <li><a href="membership.html" class="text-xl link">Membership</a>
+            </li>
+            <li><a href="contact.html" class="text-xl link">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center md:px-8 lg:px-20">
+            <div class="space-y-4">
+                <h1 class="text-xl md:text-3xl lg:text-4xl font-bold leading-tight">
+                    Welcome to FitHub
+                    <span class="text-lime-400 block mt-2">Your Fitness Journey Begins Here</span>
+                </h1>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    Join our community to unlock your full fitness potential with personalized training,
+                    group classes, and expert guidance.
+                </p>
+                <button class="bg-lime-400 hover:bg-lime-500 text-white font-bold px-8 py-3 rounded-lg 
+                             transform hover:scale-105 transition-all duration-300">
+                    Get Started
+                </button>
+            </div>
+            <div class="relative h-[250px] md:h-full sm:h-full lg:h-full">
+                <div class="absolute w-72 h-72 bg-lime-400/20 rounded-full -z-10 animate-pulse"></div>
+                <img src="src/assets/Person.png" alt="Fitness Person" class="h-full w-full object-cover" loading="lazy">
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-16 dark:bg-gray-800 bg-gray-100">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center md:px-8 lg:px-20">
+            <!-- Image Container -->
+            <div class="relative group overflow-hidden rounded-3xl shadow-2xl">
+                <div class="transform hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="src/assets/FitHub_About_img.webp" alt="About FitHub"
+                        class="w-full h-full object-cover rounded-3xl shadow-lg" loading="lazy">
+                </div>
+            </div>
+            <!-- Content Container -->
+            <div class="space-y-6 px-4 md:px-6">
+                <!-- Section Title -->
+                <div class="space-y-4">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                        About <span class="text-lime-400">FitHub</span>
+                    </h2>
+                    <div class="w-20 h-1 bg-lime-400 rounded-full"></div>
+                </div>
+                <!-- Description -->
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                    FitHub is a fitness community dedicated to helping you achieve your fitness goals.
+                    We offer personalized training, group classes, and expert guidance to support
+                    your fitness journey.
+                </p>
+                <!-- Features Grid -->
+                <div class="grid grid-cols-2 gap-4 py-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-dumbbell text-lime-400"></i>
+                        <span class="dark:text-gray-300">Personal Training</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users text-lime-400"></i>
+                        <span class="dark:text-gray-300">Group Classes</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-heart text-lime-400"></i>
+                        <span class="dark:text-gray-300">Expert Guidance</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-clock text-lime-400"></i>
+                        <span class="dark:text-gray-300">24/7 Support</span>
+                    </div>
+                </div>
+                <!-- CTA Button -->
+                <button class="group inline-flex items-center px-8 py-4 text-lg font-semibold text-white 
+                        bg-lime-400 rounded-lg hover:bg-lime-500 transform hover:-translate-y-1 
+                        transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Join Us
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform duration-300"
+                        viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    Our <span class="text-lime-400">Services</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Transform your fitness journey with our comprehensive range of services designed to meet your unique
+                    needs and goals.
+                </p>
+            </div>
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Service Card 1 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img1.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $49/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Personal Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Customized workout plans</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>One-on-one guidance</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Progress tracking</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img2.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $39/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Group Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span> Customized group workout</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Instructor-led sessions</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Motivation and progress</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Card Image -->
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="src/assets/img1.jpeg" alt="Personal Training"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <!-- Floating Price Tag -->
+                        <div class="floating_price_tag">
+                            From $59/month
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6 space-y-4">
+                        <!-- Title and Icon -->
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold group-hover:text-lime-400 transition-colors">Strength Training
+                            </h3>
+                            <span class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400"></i>
+                            </span>
+                        </div>
+
+                        <!-- Features List -->
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Strength-building exercises</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Guided training sessionse</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-lime-400 text-sm"></i>
+                                <span>Progress monitoring</span>
+                            </li>
+                        </ul>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <button class="button_service_card">
+                                <span>Learn More</span>
+                                <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom CTA -->
+            <div class="mt-16 text-center">
+                <button class="button_service">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Advertisement Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Main Content -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                            Join <span class="text-lime-400">FitHub</span> Today
+                            <span class="block mt-2">Transform Your Life</span>
+                        </h2>
+                        <div class="w-20 h-1 bg-lime-400 rounded-full"></div>
+                    </div>
+                    <!-- Promotion Cards -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <!-- Promo Card 1 -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-4xl font-bold text-lime-400">50%</span>
+                                <p class="text-gray-600 dark:text-gray-300">Off on First Month Membership</p>
+                            </div>
+                        </div>
+                        <!-- Promo Card 2 -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-4xl font-bold text-lime-400">Free</span>
+                                <p class="text-gray-600 dark:text-gray-300">Personal Training Session</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Features List -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Modern Equipment</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Expert Trainers</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">24/7 Access</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-lime-400 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Wellness Programs</span>
+                        </div>
+                    </div>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="flex-1 bg-lime-400 hover:bg-lime-500 text-white font-semibold py-4 px-8 rounded-xl 
+                                 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Join Now
+                        </button>
+                        <button class="flex-1 border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-white 
+                                 font-semibold py-4 px-8 rounded-xl transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <!-- Right Content - Image Gallery -->
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <!-- Background Decoration -->
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-lime-400/20 rounded-full blur-3xl"></div>
+                    <!-- Images -->
+                    <div class="space-y-4">
+                        <img src="src/assets/img4.avif" alt="Gym Facility"
+                            class="w-full h-48 object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                        <img src="src/assets/img5.avif" alt="Training Session"
+                            class="w-full h-64 object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <img src="src/assets/img6.avif" alt="Equipment"
+                            class="w-full h-64 object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                        <img src="src/assets/img7.avif" alt="Group Class"
+                            class="w-full h-48 object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-16 bg-white dark:bg-gray-900 overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    Why Choose <span class="text-lime-400">FitHub</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Experience the perfect blend of modern equipment, expert guidance, and innovative training methods.
+                </p>
+            </div>
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Feature Card 1 -->
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="space-y-6">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-lime-400/10 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-dumbbell text-lime-400 text-3xl"></i>
+                        </div>
+                        <!-- Content -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Modern Equipment</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                State-of-the-art fitness equipment designed for optimal performance and results.
+                            </p>
+                            <!-- Stats -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">100+ Machines</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-sync text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Regular Updates</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="space-y-6">
+                        <div class="w-16 h-16 bg-lime-400/10 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-users-cog text-lime-400 text-3xl"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Expert Trainers</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Certified professionals dedicated to helping you achieve your fitness goals.
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-certificate text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Certified</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-star text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">5+ Years Exp.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl 
+                        transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="space-y-6">
+                        <div class="w-16 h-16 bg-lime-400/10 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-clock text-lime-400 text-3xl"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">24/7 Access</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Train on your schedule with round-the-clock access to our facilities.
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-shield-alt text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Secure Access</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-video text-lime-400"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Monitored</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom CTA -->
+            <div class="mt-16 text-center">
+                <button class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white 
+                        bg-lime-400 rounded-xl hover:bg-lime-500 transform hover:-translate-y-1 
+                        transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <span>Explore All Features</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Discount Section -->
+    <section class="bg-lime-400 py-12 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-pattern transform rotate-12 scale-150"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-20 relative">
+            <!-- Toggle Container -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-white dark:bg-gray-800 rounded-full p-1 inline-flex items-center shadow-lg">
+                    <button
+                        class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-900 text-white">
+                        Monthly
+                    </button>
+                    <button
+                        class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-gray-700 dark:text-gray-300">
+                        Yearly
+                    </button>
+                </div>
+            </div>
+            <!-- Price Cards Container -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Basic Plan -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="space-y-6">
+                        <!-- Plan Header -->
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Basic Plan</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$29</span>
+                                <span class="text-gray-500 dark:text-gray-400 ml-2">/month</span>
+                            </div>
+                        </div>
+                        <!-- Features List -->
+                        <ul class="space-y-4 py-6 border-y border-gray-100 dark:border-gray-700">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Access to gym equipment</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Basic fitness assessment</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Locker room access</span>
+                            </li>
+                        </ul>
+
+                        <!-- CTA Button -->
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-xl 
+                                 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+                <!-- Premium Plan -->
+                <div class="bg-gray-900 dark:bg-gray-700 rounded-2xl p-8 shadow-xl transform hover:-translate-y-2 transition-all duration-300 
+                        scale-105 relative">
+                    <!-- Popular Badge -->
+                    <div
+                        class="absolute -top-4 right-4 bg-lime-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-white">Premium Plan</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-white">$49</span>
+                                <span class="text-gray-400 ml-2">/month</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 py-6 border-y border-gray-700">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-300">All Basic Plan features</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-300">Personal training sessions</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-300">Nutrition consultation</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-300">Group classes included</span>
+                            </li>
+                        </ul>
+
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-xl 
+                                 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+                <!-- Pro Plan -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Pro Plan</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$79</span>
+                                <span class="text-gray-500 dark:text-gray-400 ml-2">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 py-6 border-y border-gray-100 dark:border-gray-700">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">All Premium Plan features</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">VIP locker room</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Spa access</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-lime-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Priority booking</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-xl 
+                                 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    What Our <span class="text-lime-400">Members</span> Say
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Read what our members have to say about their transformation journey with FitHub.
+                </p>
+            </div>
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Testimonial Card 1 -->
+                <div class="Testimonial_Card">
+                    <div class="space-y-4">
+                        <!-- Quote Icon -->
+                        <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-quote-right text-lime-400 text-xl"></i>
+                        </div>
+                        <!-- Testimonial Text -->
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "FitHub has completely transformed my approach to fitness. The trainers are exceptional,
+                            and the community support is incredible. I've achieved results I never thought possible!"
+                        </p>
+                        <!-- Rating Stars -->
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <!-- Author Info -->
+                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <img src="src/assets/user2.jpg" alt="Sarah Johnson"
+                                class="w-12 h-12 rounded-full object-cover ring-2 ring-lime-400" loading="lazy">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Member since 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="Testimonial_Card">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-quote-right text-lime-400 text-xl"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "The personalized training programs and nutrition guidance have helped me reach my fitness
+                            goals.
+                            The trainers are knowledgeable and truly care about your success."
+                        </p>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <img src="src/assets/user1.jpg" alt="Mike Thompson"
+                                class="w-12 h-12 rounded-full object-cover ring-2 ring-lime-400" loading="lazy">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Mike Thompson</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Member since 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="Testimonial_Card">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-lime-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-quote-right text-lime-400 text-xl"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "The atmosphere at FitHub is so welcoming and motivating. The facilities are top-notch,
+                            and the group classes are both challenging and fun. Best gym experience ever!"
+                        </p>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <img src="src/assets/user3.jpg" alt="Emily Chen"
+                                class="w-12 h-12 rounded-full object-cover ring-2 ring-lime-400" loading="lazy">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Emily Chen</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Member since 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <a href="#" class="inline-block">
+                        <span class="text-3xl font-bold">
+                            <span class="text-lime-400">Fit</span>Hub
+                        </span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">
+                        Transform your life with our comprehensive fitness solutions and expert guidance.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center 
+                                    hover:bg-lime-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Our Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Class Schedule
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-lime-400 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-sm"></i>
+                                Pricing Plans
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-lime-400"></i>
+                            <span class="text-gray-400">123 Fitness Street, NY 10001, USA</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-lime-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-lime-400"></i>
+                            <span class="text-gray-400">info@fithub.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-lime-400"></i>
+                            <span class="text-gray-400">Mon - Sun: 6:00 AM - 10:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Newsletter</h3>
+                    <p class="text-gray-400">
+                        Subscribe to our newsletter for the latest updates and exclusive offers.
+                    </p>
+                    <form class="space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full bg-gray-800 rounded-lg py-3 px-4 text-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-400">
+                        </div>
+                        <button class="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold py-3 px-6 rounded-lg 
+                                 transition-all duration-300 transform hover:-translate-y-1">
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-center md:text-left">
+                        © 2024 FitHub. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Privacy Policy
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Terms of Service
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-400 transition-colors duration-300">
+                            Cookie Policy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="src/js/main.js">
+
+    </script>
+</body>
+
+</html>
